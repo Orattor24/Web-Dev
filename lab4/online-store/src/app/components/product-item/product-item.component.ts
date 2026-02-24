@@ -31,5 +31,9 @@ export class ProductItemComponent {
     const url = `https://wa.me/?text=${encodeURIComponent(this.product.link)}`;
     window.open(url, '_blank');
   }
+  shareToTelegram() {
+    const url = `https://t.me/share/url?url=${encodeURIComponent(this.product.link)}&text=${encodeURIComponent(this.product.name)}`;
+    window.open(url, '_blank');
+  }
 }
 
