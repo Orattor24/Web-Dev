@@ -1,6 +1,9 @@
 <div class="product-grid">
-  <app-product-card
-    *ngFor="let p of products"
-    [product]="p">
-  </app-product-card>
+  @for (p of products; track p.id) {
+    <app-product-item
+      *ngFor="let p of products"
+      [product]="p"
+      (remove)="handleRemove($event)">
+    </app-product-item>
+  }
 </div>

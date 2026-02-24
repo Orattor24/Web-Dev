@@ -54,3 +54,37 @@
   font-family: Arial, Helvetica, sans-serif;
 
 }
+
+.category-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-btn:hover {
+  border-color: #f01414;
+  color: #f01414;
+}
+
+.category-btn.active {
+  background: #f01414;
+  color: white;
+  border-color: #f01414;
+}
+
+.hint {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 50px;
+}

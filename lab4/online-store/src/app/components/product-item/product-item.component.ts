@@ -10,6 +10,7 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-item.component.css'
 })
 export class ProductItemComponent {
+
   @Input() product!: Product;
 
   @Output() remove = new EventEmitter<number>();
@@ -18,14 +19,17 @@ export class ProductItemComponent {
     this.product.likes++;
   }
 
-  // Метод для удаления (сообщает родителю ID товара) [cite: 77, 78]
   deleteProduct() {
     this.remove.emit(this.product.id);
   }
 
-  // Твой старый метод шеринга остается здесь [cite: 67, 96]
+  handleRemove(id: number){
+    this.remove.emit(id);
+  }
+
   shareToWhatsApp() {
     const url = `https://wa.me/?text=${encodeURIComponent(this.product.link)}`;
     window.open(url, '_blank');
   }
 }
+
