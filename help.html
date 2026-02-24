@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Огромный текст с ползунком</title>
+    <style>
+        #text {
+            font-size: 50px; /* Начальный размер */
+            transition: font-size 0.1s; /* Плавное изменение */
+        }
+    </style>
+</head>
+<body>
+
+<h3>Настройте размер текста</h3>
+<!-- Ползунок: min, max, шаг и значение -->
+<input type="range" id="sizeRange" min="20" max="200" value="50">
+<span id="sizeValue">50px</span>
+
+<div id="text">Это огромный текст</div>
+
+<script>
+    const range = document.getElementById('sizeRange');
+    const text = document.getElementById('text');
+    const sizeValue = document.getElementById('sizeValue');
+
+    range.addEventListener('input', function() {
+        // При изменении ползунка меняем размер шрифта
+        text.style.fontSize = this.value + 'px';
+        sizeValue.textContent = this.value + 'px';
+    });
+</script>
+
+</body>
+</html>

@@ -2,9 +2,12 @@
   background: white;
   border-radius: 16px;
   transition: 0.3s;
+  align-content: center;
   display: flex;
   flex-direction: column;
   padding: 15px;
+  width: 350px;
+  margin-left: 50px;
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -32,7 +35,7 @@
   justify-content: center;
 }
 
-.thumb {
+.mini {
   width: 60px;
   height: 60px;
   border: 1px solid #eee;
@@ -41,7 +44,7 @@
   object-fit: cover;
 }
 
-.thumb:hover {
+.mini:hover {
   border-color: #f01414;
 }
 
@@ -59,7 +62,9 @@ h3 {
   font-size: 0.9rem;
   color: #666;
   line-height: 1.4;
-  height: 40px;
+  height: 80px;
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
 .price {
