@@ -1,0 +1,22 @@
+.product-grid {
+  display: grid;
+  /* Это правило создаст 3 колонки одинаковой ширины */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Расстояние между карточками */
+  padding: 20px;
+  justify-items: center; /* Центрируем карточки внутри колонок */
+}
+
+/* Адаптивность: если экран узкий (например, телефон),
+   делаем 1 колонку вместо 3 */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки для планшетов */
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 колонка для мобилок */
+  }
+}

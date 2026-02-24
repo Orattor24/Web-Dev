@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="container">
+    <div class="kaspi">
+      <img src="https://adena.by/bitrix/templates/aspro-allcorp3/images/kaspi-kz-seeklogo.png" alt="Kaspi.kz">
+    </div>
+    <div class="links">
+      <span>Клиентам</span>
+      <span>Бизнесу</span>
+      <span>Kaspi Гид</span>
+    </div>
+    <div class="lang">
+      <span>Қаз</span>
+      <span class="active_lang">Рус</span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+  <h1 class="name">Магазин на Kaspi</h1>
+
+  <div class="category-nav">
+    @for (cat of categories; track cat.id) {
+      <button
+        (click)="selectCategory(cat.id)"
+        [class.active]="selectedCategory === cat.id"
+        class="category-btn">
+        {{ cat.name }}
+      </button>
+    }
+  </div>
+
+  @if (selectedCategory) {
+    <app-product-list
+      [products]="filteredProducts"
+      (remove)="removeProduct($event)">
+    </app-product-list>
+  } @else {
+    <div class="welcome-box">
+      <p class="hint">Пожалуйста, выберите категорию, чтобы увидеть товары</p>
+    </div>
+  }
+</main>
