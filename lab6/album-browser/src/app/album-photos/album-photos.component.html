@@ -1,1 +1,6 @@
-<p>album-photos works!</p>
+<button [routerLink]="['/albums', albumId]">Back</button> <div class="photo-grid">
+  <div *ngFor="let photo of photos" class="photo-card">
+    <img [src]="photo.thumbnailUrl" [title]="photo.title">
+    <p>{{photo.title}}</p>
+  </div>
+</div>
