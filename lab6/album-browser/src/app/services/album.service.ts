@@ -9,7 +9,7 @@ import { Photo } from '../models/photo.model';
 })
 export class AlbumService {
   // Базовый URL API [cite: 25]
-  private baseUrl = 'https://jsonplaceholder.typicode.com';
+  private baseUrl = 'https://jsonplaceholder.typicode.com'; // Убедись, что нет опечаток
 
   constructor(private http: HttpClient) {} // Инъекция HttpClient
 
@@ -21,6 +21,9 @@ export class AlbumService {
   // Получить один альбом по ID [cite: 29, 52]
   getAlbum(id: number): Observable<Album> {
     return this.http.get<Album>(`${this.baseUrl}/albums/${id}`);
+  }
+  createAlbum(album: Album): Observable<Album> {
+    return this.http.post<Album>(`${this.baseUrl}/albums`, album);
   }
 
   // Получить фотографии конкретного альбома [cite: 30, 52]
