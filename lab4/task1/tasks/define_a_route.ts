@@ -6,7 +6,7 @@ import {User} from './user/user';
 export const routes: Routes = [
   {
     path: '',
-    title: 'App Home Page',
+    title: 'App HomeComponent Page',
     component: Home,
   },
   {
@@ -16,7 +16,7 @@ export const routes: Routes = [
   },
 ];
 
-//home.ts
+//home.component.ts
 
 import {Component} from '@angular/core';
 
