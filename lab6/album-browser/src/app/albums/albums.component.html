@@ -1,5 +1,7 @@
-<div *ngIf="loading">Loading albums...</div>
-
+@if (loading) {
+  <div>Loading albums...</div>
+} @else {
+}
 <div *ngIf="!loading">
   <h3>Add New Album</h3>
   <input [(ngModel)]="newTitle" placeholder="Album title">
@@ -7,9 +9,12 @@
   <hr>
 
   <ul>
-    <li *ngFor="let album of albums">
-      <a [routerLink]="['/albums', album.id]">{{album.id}} - {{album.title}}</a>
-      <button (click)="deleteAlbum(album.id)">Delete</button>
-    </li>
+    @for (album of albums; track album.id) {
+      <li>
+        <a [routerLink]="['/albums', album.id]">{{album.id}} - {{album.title}}</a>
+        <button (click)="deleteAlbum(album.id)">Delete</button>
+      </li>
+    }
+
   </ul>
 </div>

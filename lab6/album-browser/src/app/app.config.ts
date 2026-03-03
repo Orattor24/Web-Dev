@@ -1,11 +1,11 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http'; // Импорт
+import { provideHttpClient } from '@angular/common/http'; // 1. Добавь импорт
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient() // Добавь это в массив providers
+    provideHttpClient() // 2. Добавь это в массив
   ]
 };
