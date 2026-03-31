@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views # Здесь импорт сработает, так как views.py лежит в той же папке api
+from . import views
 
 urlpatterns = [
     path('products/', views.product_list),
