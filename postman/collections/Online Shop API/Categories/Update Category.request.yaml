@@ -1,0 +1,14 @@
+$kind: http-request
+name: Update Category
+url: http://127.0.0.1:8000/api/categories/6/
+method: PUT
+body:
+  type: javascript
+  content: "{\r
+
+    \    \"id\": 6,\r
+
+    \    \"name\": \"egg\"\r
+
+    }"
+order: 4499943282403742

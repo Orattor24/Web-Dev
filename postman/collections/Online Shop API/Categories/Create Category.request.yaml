@@ -1,0 +1,12 @@
+$kind: http-request
+name: Create Category
+url: http://127.0.0.1:8000/api/categories/
+method: POST
+queryParams:
+  - key: name
+    value: egg
+    disabled: true
+body:
+  type: json
+  content: "{\r\n    \"name\": \"egg\"\r\n}"
+order: 4498065954908270

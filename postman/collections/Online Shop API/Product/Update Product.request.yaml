@@ -1,0 +1,5 @@
+$kind: http-request
+name: Update Product
+url: http://127.0.0.1:8000/api/products/21/
+method: PUT
+order: 2590996077164427
